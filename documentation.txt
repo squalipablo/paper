@@ -1,0 +1,50 @@
+created a new node environment project
+npm init
+
+
+
+providing the following information that were included in package.json after.
+
+{
+  "name": "sequra",
+  "version": "1.0.0",
+  "description": "SeQura interview test",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Pablo Pasqualicchio",
+  "license": "ISC"
+}
+
+installing mocha for having something with simple configuration
+	npm install mocha
+	
+It tooks some time to choose the persistence, in the end I choose json db for speed of setting up, and ease to use, I will do calculation on code side instead than at db level.
+
+installing json server
+	npm install -g json-server
+
+installing axios, parse json automatically and can send multiple parallel requests, in a larger behaviour could be better solution
+	npm install axios
+	
+
+...
+At this point the project it has a function to calculate the amount of given orders, now I have to filter them for a week.
+
+I have not a database to do query on dates, so I will download all the orders for all the dates and will calculate the week in the code, yes I know it's not optimal, but I will improve this in the db level when I'll have it. Also I leave it agnostic from the logic of the time period, the user will send me the date range he wants to show.
+
+after retrieving all the orders with complete date not null we add all the amount of these orders and create a map which will be shown at display as response, and at the same time will be persisted on our
+Json Server DB.
+
+Problems at this point: 
+-if doing calculation twice it will persist twice the same disboursment!! have to fix this later.
+-json server will restart each massive post (insert), for this I will fix when having a proper DB. This is accomplished in configuration which takes (lot) time, and for now
+I will restart Json server after each POST, it's not efficient at all, it's obvious but will be fine for a demo pourpose only.
+
+
+Future implementations:
+can make getDisboursmentsToShowByMerchantAndPersist generic with overloading parameter merchantId
+input validation
+
+
