@@ -1,0 +1,22 @@
+{
+  "name": "sequra",
+  "version": "1.0.0",
+  "description": "SeQura interview test",
+  "main": "endpoint.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha",
+    "start": "nodemon ./endpoint.js --exec babel-node -e js"
+  },
+  "author": "Pablo Pasqualicchio",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "currency.js": "^2.0.4",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "mocha": "^9.2.2"
+  }
+}
