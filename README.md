@@ -41,3 +41,6 @@ to query for a specific merchant use URL param /merchantId
 for asking the disboursment for the same period above but only for merchant id 7 thi is the URL
 
 http://localhost:3000/calculateDisboursments/7?fromDate=01%2F01%2F2018&toDate=01%2F15%2F2018
+
+run tests
+_npm test_
